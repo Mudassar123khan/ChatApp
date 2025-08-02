@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Chats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>All Chats</h2>
+    <%for(item of data){%>
+        <div class="chat">
+        <p>From: <%=item.from%></p>
+        <div class="msg">
+            <p>Message: <%=item.msg%></p>
+        </div>
+        <p>Received by: <%=item.to%></p>
+        <hr>
+        <p>time: <%=item.created_at.toString().split(" ")[4]%></p>
+        <p>date:<%=item.created_at.toString().split(" ")[1]%> <%=item.created_at.toString().split(" ")[2]%> <%=item.created_at.toString().split(" ")[3]%></p>
+        <%}%>
+        </div>
+    
+    <form method="GET" action="/chats/new">
+        <button>Create new Chat</button>
+    </form>
+</body>
+</html>
